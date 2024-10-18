@@ -1,0 +1,94 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Tracking System</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Student Attendance Tracking System</h1>
+
+<form id="attendanceForm">
+    <label for="studentName">Student Name:</label>
+    <input type="text" id="studentName" placeholder="Enter student name"><br><br>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date"><br><br>
+
+    <label for="status">Status:</label>
+    <select id="status">
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
+        <option value="Late">Late</option>
+    </select><br><br>
+
+    <button type="button" onclick="markAttendance()">Mark Attendance</button>
+</form>
+
+<h2>Attendance List</h2>
+
+<table id="attendanceTable">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Dynamic rows will be added here -->
+    </tbody>
+</table>
+
+<script>
+    function markAttendance() {
+        const studentName = document.getElementById("studentName").value;
+        const date = document.getElementById("date").value;
+        const status = document.getElementById("status").value;
+
+        if (!studentName || !date) {
+            alert("Please fill out all fields.");
+            return;
+        }
+
+        // Get the table body element
+        const table = document.getElementById("attendanceTable").getElementsByTagName("tbody")[0];
+
+        // Insert a new row
+        const newRow = table.insertRow();
+
+        // Insert cells and set their content
+        const nameCell = newRow.insertCell(0);
+        const dateCell = newRow.insertCell(1);
+        const statusCell = newRow.insertCell(2);
+
+        nameCell.textContent = studentName;
+        dateCell.textContent = date;
+        statusCell.textContent = status;
+
+        // Clear the form fields
+        document.getElementById("attendanceForm").reset();
+    }
+</script>
+
+</body>
+</html>
+

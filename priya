@@ -1,0 +1,180 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracking System</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .status-present {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+
+        .status-absent {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+
+        .status-late {
+            background-color: #fcf8e3;
+            color: #8a6d3b;
+        }
+
+        /* Form Styling */
+        form {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+            }
+
+            table, th, td {
+                font-size: 14px;
+            }
+
+            input[type="text"], input[type="date"], select {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Attendance Tracking System</h1>
+    
+    <!-- Form to mark attendance -->
+    <form action="#" method="post">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" placeholder="Enter student name" required>
+
+        <label for="attendanceDate">Date:</label>
+        <input type="date" id="attendanceDate" name="attendanceDate" required>
+
+        <label for="attendanceStatus">Status:</label>
+        <select id="attendanceStatus" name="attendanceStatus" required>
+            <option value="present">Present</option>
+            <option value="absent">Absent</option>
+            <option value="late">Late</option>
+        </select>
+
+        <input type="submit" value="Mark Attendance">
+    </form>
+
+    <!-- Table to display attendance records -->
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="status-present">
+                <td>John Doe</td>
+                <td>2024-10-12</td>
+                <td>Present</td>
+            </tr>
+            <tr class="status-absent">
+                <td>Jane Smith</td>
+                <td>2024-10-12</td>
+                <td>Absent</td>
+            </tr>
+            <tr class="status-late">
+                <td>Mark Johnson</td>
+                <td>2024-10-12</td>
+                <td>Late</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
